@@ -1,10 +1,10 @@
 [package]
-name = "pyo3_creds"
+name = "credentials"
 version = "0.1.0"
 authors = ["tomazinhal <tomaz.azinhal@mobilityhouse.com>"]
 edition = "2018"
 readme = "README.md"
-repository = "https://github.com/mobilityhouse/pyo3-creds"
+repository = "https://github.com/tmh-azinhal/pyo3-creds"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -13,9 +13,10 @@ repository = "https://github.com/mobilityhouse/pyo3-creds"
 
 [features]
 default = ["pyo3/extension-module"]
+extension-module = ["pyo3/extension-module"]
 
 [lib]
-name = "creds"
+name = "credentials"
 crate-type = ["cdylib"]
 
 [dependencies.pyo3]

@@ -1,21 +1,10 @@
 use pyo3::prelude::*;
+pub mod credentials;
+use credentials::Credentials;
 
-#[pyclass]
-#[derive(Clone)]
-pub struct Credentials {
-    pub username: String,
-    pub password: String,
-    pub usertype: String,
+#[pymodule]
+fn creds(_py: Python, m: &PyModule) -> PyResult<()> {
+    m.add_class::<Credentials>()?;
+    Ok(())
 }
 
-#[pymethods]
-impl Credentials {
-    #[new]
-    fn new(username: String, password: String, usertype: String) -> Self {
-        Credentials {
-            username,
-            password,
-            usertype,
-        }
-    }
-}

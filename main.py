@@ -1,6 +1,6 @@
 import io
-import creds
 import pickle
+import credentials
 
 
 class Credentials:
@@ -12,7 +12,7 @@ class Credentials:
 if __name__ == "__main__":
     usr, pwd, prm = ('user', 'pass', 'ReadOnly')
     py_creds = Credentials(usr, pwd, prm)
-    rs_creds = creds.Credentials(usr, pwd, prm)
+    rs_creds = credentials.Credentials(usr, pwd, prm)
 
     buffer = io.BytesIO()
     pickle.dump(py_creds, buffer)
